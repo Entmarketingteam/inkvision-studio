@@ -14,11 +14,25 @@ export default {
   	},
   	extend: {
   		colors: {
-  			'ink-red': '#E84545',
-  			'ink-dark': '#0F0F0F',
-  			'ink-card': '#1A1A1A',
-  			'ink-border': '#2D2D2D',
-  			'ink-muted': '#A0A0A0',
+  			'tidal': {
+  				navy: '#0B1929',
+  				'navy-light': '#122640',
+  				'navy-dark': '#060F1A',
+  				teal: '#1E90B0',
+  				'teal-light': '#3AB4D4',
+  				'teal-dark': '#166B87',
+  				blue: '#2D5A8A',
+  				'blue-light': '#4A7BAD',
+  				orange: '#E85A30',
+  				'orange-light': '#F47A54',
+  				'orange-dark': '#C44520',
+  				coral: '#FF6B4A',
+  				cream: '#F5E6D3',
+  				'cream-dark': '#D4C4B0',
+  				white: '#FFFFFF',
+  				muted: '#8BA3B9',
+  				'muted-dark': '#5A7A94',
+  			},
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
@@ -84,11 +98,23 @@ export default {
   				to: {
   					height: '0'
   				}
+  			},
+  			'wave': {
+  				'0%, 100%': { height: '8px' },
+  				'50%': { height: '32px' }
+  			},
+  			'float': {
+  				'0%': { transform: 'translateY(100vh) rotate(0deg)', opacity: '0' },
+  				'10%': { opacity: '1' },
+  				'90%': { opacity: '1' },
+  				'100%': { transform: 'translateY(-100vh) rotate(720deg)', opacity: '0' }
   			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'wave': 'wave 1s ease-in-out infinite',
+  			'float': 'float 15s linear infinite'
   		},
   		boxShadow: {
   			'2xs': 'var(--shadow-2xs)',
