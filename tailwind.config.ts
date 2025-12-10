@@ -14,6 +14,11 @@ export default {
   	},
   	extend: {
   		colors: {
+  			'ink-red': '#E84545',
+  			'ink-dark': '#0F0F0F',
+  			'ink-card': '#1A1A1A',
+  			'ink-border': '#2D2D2D',
+  			'ink-muted': '#A0A0A0',
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
