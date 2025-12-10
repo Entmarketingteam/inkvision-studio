@@ -35,7 +35,7 @@ export default function SizePlacementStep({ formData, updateFormData }: Props) {
         <h2 className="text-2xl font-display font-bold text-white mb-2">
           Size & Placement
         </h2>
-        <p className="text-ink-muted">Choose the size and where you want it on your body</p>
+        <p className="text-tidal-muted">Choose the size and where you want it on your body</p>
       </div>
 
       <div>
@@ -47,13 +47,13 @@ export default function SizePlacementStep({ formData, updateFormData }: Props) {
               onClick={() => updateFormData('size', size.name)}
               className={`p-4 rounded-lg border-2 text-left transition-all ${
                 formData.size === size.name
-                  ? 'border-ink-red bg-ink-red/10'
-                  : 'border-ink-border hover:border-ink-muted'
+                  ? 'border-tidal-orange bg-tidal-orange/10'
+                  : 'border-tidal-blue/20 hover:border-tidal-muted'
               }`}
             >
               <h3 className="text-white font-semibold mb-1">{size.name}</h3>
-              <p className="text-ink-red text-sm mb-1">{size.size}</p>
-              <p className="text-ink-muted text-xs">{size.desc}</p>
+              <p className="text-tidal-orange text-sm mb-1">{size.size}</p>
+              <p className="text-tidal-muted text-xs">{size.desc}</p>
             </button>
           ))}
         </div>
@@ -78,8 +78,8 @@ export default function SizePlacementStep({ formData, updateFormData }: Props) {
               onClick={() => updateFormData('placement', placement)}
               className={`p-3 rounded-lg border-2 text-center transition-all ${
                 formData.placement === placement
-                  ? 'border-ink-red bg-ink-red/10 text-white'
-                  : 'border-ink-border text-ink-muted hover:border-ink-muted hover:text-white'
+                  ? 'border-tidal-orange bg-tidal-orange/10 text-white'
+                  : 'border-tidal-blue/20 text-tidal-muted hover:border-tidal-muted hover:text-white'
               }`}
             >
               <span className="text-sm">{placement}</span>

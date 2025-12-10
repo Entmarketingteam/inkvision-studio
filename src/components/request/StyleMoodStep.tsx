@@ -44,7 +44,7 @@ export default function StyleMoodStep({ formData, updateFormData }: Props) {
         <h2 className="text-2xl font-display font-bold text-white mb-2">
           Style & Mood
         </h2>
-        <p className="text-ink-muted">Choose the artistic style and emotional feel</p>
+        <p className="text-tidal-muted">Choose the artistic style and emotional feel</p>
       </div>
 
       <div>
@@ -58,13 +58,13 @@ export default function StyleMoodStep({ formData, updateFormData }: Props) {
                 onClick={() => updateFormData('style', style.name)}
                 className={`p-4 rounded-lg border-2 text-left transition-all ${
                   formData.style === style.name
-                    ? 'border-ink-red bg-ink-red/10'
-                    : 'border-ink-border hover:border-ink-muted'
+                    ? 'border-tidal-orange bg-tidal-orange/10'
+                    : 'border-tidal-blue/20 hover:border-tidal-muted'
                 }`}
               >
-                <Icon className="h-6 w-6 text-ink-red mb-2" />
+                <Icon className="h-6 w-6 text-tidal-orange mb-2" />
                 <h3 className="text-white font-semibold text-sm mb-1">{style.name}</h3>
-                <p className="text-ink-muted text-xs">{style.desc}</p>
+                <p className="text-tidal-muted text-xs">{style.desc}</p>
               </button>
             );
           })}
@@ -80,12 +80,12 @@ export default function StyleMoodStep({ formData, updateFormData }: Props) {
               onClick={() => updateFormData('mood', mood.name)}
               className={`p-4 rounded-lg border-2 text-left transition-all ${
                 formData.mood === mood.name
-                  ? 'border-ink-red bg-ink-red/10'
-                  : 'border-ink-border hover:border-ink-muted'
+                  ? 'border-tidal-orange bg-tidal-orange/10'
+                  : 'border-tidal-blue/20 hover:border-tidal-muted'
               }`}
             >
               <h3 className="text-white font-semibold text-sm mb-1">{mood.name}</h3>
-              <p className="text-ink-muted text-xs">{mood.desc}</p>
+              <p className="text-tidal-muted text-xs">{mood.desc}</p>
             </button>
           ))}
         </div>
@@ -100,8 +100,8 @@ export default function StyleMoodStep({ formData, updateFormData }: Props) {
               onClick={() => updateFormData('background_style', bg)}
               className={`p-3 rounded-lg border-2 text-center transition-all ${
                 formData.background_style === bg
-                  ? 'border-ink-red bg-ink-red/10 text-white'
-                  : 'border-ink-border text-ink-muted hover:border-ink-muted hover:text-white'
+                  ? 'border-tidal-orange bg-tidal-orange/10 text-white'
+                  : 'border-tidal-blue/20 text-tidal-muted hover:border-tidal-muted hover:text-white'
               }`}
             >
               <span className="text-sm">{bg}</span>

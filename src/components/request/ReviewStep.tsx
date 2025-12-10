@@ -18,38 +18,38 @@ export default function ReviewStep({ formData, goToStep }: Props) {
         <h2 className="text-2xl font-display font-bold text-white mb-2">
           Review Your Request
         </h2>
-        <p className="text-ink-muted">Double-check everything before submitting</p>
+        <p className="text-tidal-muted">Double-check everything before submitting</p>
       </div>
 
       <div className="space-y-4">
-        <div className="bg-ink-dark rounded-lg p-4 border border-ink-border">
+        <div className="bg-tidal-navy rounded-lg p-4 border border-tidal-blue/20">
           <div className="flex justify-between items-start mb-2">
             <h3 className="text-white font-semibold">Concept</h3>
             <Button
               variant="ghost"
               size="sm"
               onClick={() => goToStep(1)}
-              className="text-ink-red hover:text-ink-red h-auto p-1"
+              className="text-tidal-orange hover:text-tidal-orange h-auto p-1"
             >
               <Edit className="h-4 w-4" />
             </Button>
           </div>
-          <p className="text-ink-muted text-sm">{formData.concept_description}</p>
+          <p className="text-tidal-muted text-sm">{formData.concept_description}</p>
           {formData.personal_meaning && (
-            <p className="text-ink-muted text-sm mt-2 italic">
+            <p className="text-tidal-muted text-sm mt-2 italic">
               Meaning: {formData.personal_meaning}
             </p>
           )}
         </div>
 
-        <div className="bg-ink-dark rounded-lg p-4 border border-ink-border">
+        <div className="bg-tidal-navy rounded-lg p-4 border border-tidal-blue/20">
           <div className="flex justify-between items-start mb-2">
             <h3 className="text-white font-semibold">Style & Mood</h3>
             <Button
               variant="ghost"
               size="sm"
               onClick={() => goToStep(2)}
-              className="text-ink-red hover:text-ink-red h-auto p-1"
+              className="text-tidal-orange hover:text-tidal-orange h-auto p-1"
             >
               <Edit className="h-4 w-4" />
             </Button>
@@ -61,14 +61,14 @@ export default function ReviewStep({ formData, goToStep }: Props) {
           </div>
         </div>
 
-        <div className="bg-ink-dark rounded-lg p-4 border border-ink-border">
+        <div className="bg-tidal-navy rounded-lg p-4 border border-tidal-blue/20">
           <div className="flex justify-between items-start mb-2">
             <h3 className="text-white font-semibold">Size & Placement</h3>
             <Button
               variant="ghost"
               size="sm"
               onClick={() => goToStep(3)}
-              className="text-ink-red hover:text-ink-red h-auto p-1"
+              className="text-tidal-orange hover:text-tidal-orange h-auto p-1"
             >
               <Edit className="h-4 w-4" />
             </Button>
@@ -80,24 +80,24 @@ export default function ReviewStep({ formData, goToStep }: Props) {
         </div>
 
         {formData.reference_notes && (
-          <div className="bg-ink-dark rounded-lg p-4 border border-ink-border">
+          <div className="bg-tidal-navy rounded-lg p-4 border border-tidal-blue/20">
             <div className="flex justify-between items-start mb-2">
               <h3 className="text-white font-semibold">Reference Notes</h3>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => goToStep(4)}
-                className="text-ink-red hover:text-ink-red h-auto p-1"
+                className="text-tidal-orange hover:text-tidal-orange h-auto p-1"
               >
                 <Edit className="h-4 w-4" />
               </Button>
             </div>
-            <p className="text-ink-muted text-sm">{formData.reference_notes}</p>
+            <p className="text-tidal-muted text-sm">{formData.reference_notes}</p>
           </div>
         )}
       </div>
 
-      <div className="flex items-start space-x-2 p-4 bg-ink-dark rounded-lg border border-ink-border">
+      <div className="flex items-start space-x-2 p-4 bg-tidal-navy rounded-lg border border-tidal-blue/20">
         <Checkbox
           id="agreement"
           checked={agreed}
@@ -106,7 +106,7 @@ export default function ReviewStep({ formData, goToStep }: Props) {
         />
         <Label
           htmlFor="agreement"
-          className="text-sm text-ink-muted leading-relaxed cursor-pointer"
+          className="text-sm text-tidal-muted leading-relaxed cursor-pointer"
         >
           I understand that AI concepts are starting points and will be refined by the artist.
           The final design may differ from initial concepts based on technical and artistic considerations.
@@ -118,7 +118,7 @@ export default function ReviewStep({ formData, goToStep }: Props) {
 
 function Badge({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center px-3 py-1 rounded-full bg-ink-red/20 text-ink-red text-sm border border-ink-red/30">
+    <span className="inline-flex items-center px-3 py-1 rounded-full bg-tidal-orange/20 text-tidal-orange text-sm border border-tidal-orange/30">
       {children}
     </span>
   );

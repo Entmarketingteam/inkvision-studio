@@ -110,12 +110,12 @@ export default function NewRequest() {
   };
 
   return (
-    <div className="min-h-screen bg-ink-dark">
-      <nav className="bg-ink-card border-b border-ink-border">
+    <div className="min-h-screen bg-tidal-navy">
+      <nav className="bg-tidal-navy-light border-b border-tidal-blue/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/dashboard" className="text-2xl font-display font-bold">
-              InkVision <span className="text-ink-red">Studio</span>
+              Tidal Ink <span className="text-tidal-orange">Tattoo</span>
             </Link>
           </div>
         </div>
@@ -124,7 +124,7 @@ export default function NewRequest() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
           <Link to="/dashboard">
-            <Button variant="ghost" className="text-ink-muted hover:text-white mb-4">
+            <Button variant="ghost" className="text-tidal-muted hover:text-white mb-4">
               <ChevronLeft className="h-4 w-4 mr-2" />
               Back to Dashboard
             </Button>
@@ -132,7 +132,7 @@ export default function NewRequest() {
           <h1 className="text-3xl font-display font-bold text-white mb-2">
             New Design Request
           </h1>
-          <p className="text-ink-muted">Tell us about your tattoo vision</p>
+          <p className="text-tidal-muted">Tell us about your tattoo vision</p>
         </div>
 
         <div className="mb-8">
@@ -142,14 +142,14 @@ export default function NewRequest() {
                 <button
                   onClick={() => goToStep(step.id)}
                   className={`flex flex-col items-center ${
-                    currentStep >= step.id ? 'text-ink-red' : 'text-ink-muted'
+                    currentStep >= step.id ? 'text-tidal-orange' : 'text-tidal-muted'
                   }`}
                 >
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center border-2 mb-2 transition-all ${
                       currentStep >= step.id
-                        ? 'border-ink-red bg-ink-red/20'
-                        : 'border-ink-border'
+                        ? 'border-tidal-orange bg-tidal-orange/20'
+                        : 'border-tidal-blue/20'
                     }`}
                   >
                     {step.id}
@@ -159,7 +159,7 @@ export default function NewRequest() {
                 {index < steps.length - 1 && (
                   <div
                     className={`flex-1 h-0.5 mx-2 ${
-                      currentStep > step.id ? 'bg-ink-red' : 'bg-ink-border'
+                      currentStep > step.id ? 'bg-tidal-orange' : 'bg-tidal-blue/20'
                     }`}
                   />
                 )}
@@ -168,7 +168,7 @@ export default function NewRequest() {
           </div>
         </div>
 
-        <Card className="bg-ink-card border-ink-border p-6">
+        <Card className="bg-tidal-navy-light border-tidal-blue/20 p-6">
           {currentStep === 1 && (
             <ConceptStep formData={formData} updateFormData={updateFormData} />
           )}
@@ -185,12 +185,12 @@ export default function NewRequest() {
             <ReviewStep formData={formData} goToStep={goToStep} />
           )}
 
-          <div className="flex justify-between mt-8 pt-6 border-t border-ink-border">
+          <div className="flex justify-between mt-8 pt-6 border-t border-tidal-blue/20">
             <Button
               variant="outline"
               onClick={prevStep}
               disabled={currentStep === 1}
-              className="border-ink-border text-white hover:bg-ink-dark"
+              className="border-tidal-blue/20 text-white hover:bg-tidal-navy"
             >
               <ChevronLeft className="h-4 w-4 mr-2" />
               Previous
@@ -200,7 +200,7 @@ export default function NewRequest() {
               <Button
                 onClick={nextStep}
                 disabled={!canProceed()}
-                className="bg-ink-red hover:bg-ink-red/90 text-white"
+                className="bg-tidal-orange hover:bg-tidal-orange/90 text-white"
               >
                 Next
                 <ChevronRight className="h-4 w-4 ml-2" />
@@ -209,7 +209,7 @@ export default function NewRequest() {
               <Button
                 onClick={handleSubmit}
                 disabled={isSubmitting || !canProceed()}
-                className="bg-ink-red hover:bg-ink-red/90 text-white"
+                className="bg-tidal-orange hover:bg-tidal-orange/90 text-white"
               >
                 {isSubmitting ? 'Submitting...' : 'Submit Request'}
               </Button>

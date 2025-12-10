@@ -112,16 +112,16 @@ export default function DesignReview() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-ink-dark flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-ink-red"></div>
+      <div className="min-h-screen bg-tidal-navy flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-tidal-orange"></div>
       </div>
     );
   }
 
   if (!request) {
     return (
-      <div className="min-h-screen bg-ink-dark flex items-center justify-center">
-        <p className="text-ink-muted">Design request not found</p>
+      <div className="min-h-screen bg-tidal-navy flex items-center justify-center">
+        <p className="text-tidal-muted">Design request not found</p>
       </div>
     );
   }
@@ -130,12 +130,12 @@ export default function DesignReview() {
   const approvedImage = images.find(img => img.is_approved);
 
   return (
-    <div className="min-h-screen bg-ink-dark">
-      <nav className="bg-ink-card border-b border-ink-border">
+    <div className="min-h-screen bg-tidal-navy">
+      <nav className="bg-tidal-navy-light border-b border-tidal-blue/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/dashboard" className="text-2xl font-display font-bold">
-              InkVision <span className="text-ink-red">Studio</span>
+              Tidal Ink <span className="text-tidal-orange">Tattoo</span>
             </Link>
           </div>
         </div>
@@ -143,7 +143,7 @@ export default function DesignReview() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Link to="/dashboard">
-          <Button variant="ghost" className="text-ink-muted hover:text-white mb-4">
+          <Button variant="ghost" className="text-tidal-muted hover:text-white mb-4">
             <ChevronLeft className="h-4 w-4 mr-2" />
             Back to Dashboard
           </Button>
@@ -171,7 +171,7 @@ export default function DesignReview() {
 
               return (
                 <div key={step} className="flex items-center flex-1">
-                  <div className={`h-2 rounded-full flex-1 ${isPassed || isActive ? 'bg-ink-red' : 'bg-ink-border'}`} />
+                  <div className={`h-2 rounded-full flex-1 ${isPassed || isActive ? 'bg-tidal-orange' : 'bg-tidal-blue/20'}`} />
                   {index < 4 && <div className="w-2" />}
                 </div>
               );
@@ -179,12 +179,12 @@ export default function DesignReview() {
           </div>
         </div>
 
-        <Card className="bg-ink-card border-ink-border mb-8">
+        <Card className="bg-tidal-navy-light border-tidal-blue/20 mb-8">
           <CardContent className="p-6">
             <h2 className="text-xl font-display font-semibold text-white mb-4">Request Details</h2>
             <div className="space-y-3">
               <div>
-                <span className="text-ink-muted text-sm">Concept:</span>
+                <span className="text-tidal-muted text-sm">Concept:</span>
                 <p className="text-white">{request.concept_description}</p>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -198,13 +198,13 @@ export default function DesignReview() {
         </Card>
 
         {request.status === 'generating' && (
-          <Card className="bg-ink-card border-ink-border">
+          <Card className="bg-tidal-navy-light border-tidal-blue/20">
             <CardContent className="py-16 text-center">
-              <Sparkles className="h-16 w-16 text-ink-red mx-auto mb-4 animate-pulse" />
+              <Sparkles className="h-16 w-16 text-tidal-orange mx-auto mb-4 animate-pulse" />
               <h2 className="text-2xl font-display font-bold text-white mb-2">
                 Creating Your Concepts...
               </h2>
-              <p className="text-ink-muted">This usually takes 1-2 minutes</p>
+              <p className="text-tidal-muted">This usually takes 1-2 minutes</p>
             </CardContent>
           </Card>
         )}
@@ -216,10 +216,10 @@ export default function DesignReview() {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {currentRoundImages.map((image, index) => (
-                <Card key={image.id} className="bg-ink-card border-ink-border overflow-hidden group">
-                  <div className="relative aspect-square bg-ink-dark">
+                <Card key={image.id} className="bg-tidal-navy-light border-tidal-blue/20 overflow-hidden group">
+                  <div className="relative aspect-square bg-tidal-navy">
                     <div className="absolute top-2 left-2 z-10">
-                      <span className="inline-flex items-center justify-center w-8 h-8 bg-ink-card/80 backdrop-blur text-white rounded-full text-sm font-semibold">
+                      <span className="inline-flex items-center justify-center w-8 h-8 bg-tidal-navy-light/80 backdrop-blur text-white rounded-full text-sm font-semibold">
                         {index + 1}
                       </span>
                     </div>
@@ -228,12 +228,12 @@ export default function DesignReview() {
                         <Heart className="h-6 w-6 text-pink-500 fill-pink-500" />
                       </div>
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink-dark via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4 gap-2">
+                    <div className="absolute inset-0 bg-gradient-to-t from-tidal-navy via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4 gap-2">
                       <Button
                         size="sm"
                         variant="outline"
                         onClick={() => toggleLike(image.id, image.is_liked)}
-                        className={`border-ink-border ${image.is_liked ? 'bg-pink-500/20 border-pink-500' : 'bg-ink-card/80'} backdrop-blur`}
+                        className={`border-tidal-blue/20 ${image.is_liked ? 'bg-pink-500/20 border-pink-500' : 'bg-tidal-navy-light/80'} backdrop-blur`}
                       >
                         <Heart className={`h-4 w-4 ${image.is_liked ? 'fill-pink-500 text-pink-500' : ''}`} />
                       </Button>
@@ -241,7 +241,7 @@ export default function DesignReview() {
                         size="sm"
                         variant="outline"
                         onClick={() => handleVariationRequest(image)}
-                        className="bg-ink-card/80 backdrop-blur border-ink-border"
+                        className="bg-tidal-navy-light/80 backdrop-blur border-tidal-blue/20"
                       >
                         <RefreshCw className="h-4 w-4" />
                       </Button>
@@ -253,7 +253,7 @@ export default function DesignReview() {
                         <Check className="h-4 w-4" />
                       </Button>
                     </div>
-                    <div className="absolute inset-0 flex items-center justify-center text-ink-muted">
+                    <div className="absolute inset-0 flex items-center justify-center text-tidal-muted">
                       <p className="text-sm">Concept {index + 1}</p>
                     </div>
                   </div>
@@ -264,7 +264,7 @@ export default function DesignReview() {
         ) : null}
 
         {request.status === 'approved' || request.status === 'stencil_ready' ? (
-          <Card className="bg-ink-card border-ink-border">
+          <Card className="bg-tidal-navy-light border-tidal-blue/20">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-display font-bold text-white">
@@ -275,17 +275,17 @@ export default function DesignReview() {
                   Approved
                 </span>
               </div>
-              <div className="relative aspect-square max-w-2xl mx-auto bg-ink-dark rounded-lg mb-6">
-                <div className="absolute inset-0 flex items-center justify-center text-ink-muted">
+              <div className="relative aspect-square max-w-2xl mx-auto bg-tidal-navy rounded-lg mb-6">
+                <div className="absolute inset-0 flex items-center justify-center text-tidal-muted">
                   <p>Approved Design Preview</p>
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button variant="outline" className="border-ink-border text-white">
+                <Button variant="outline" className="border-tidal-blue/20 text-white">
                   <Download className="h-4 w-4 mr-2" />
                   Download
                 </Button>
-                <Button className="bg-ink-red hover:bg-ink-red/90 text-white">
+                <Button className="bg-tidal-orange hover:bg-tidal-orange/90 text-white">
                   <Calendar className="h-4 w-4 mr-2" />
                   Schedule Appointment
                 </Button>
@@ -296,10 +296,10 @@ export default function DesignReview() {
       </div>
 
       <Dialog open={showVariationModal} onOpenChange={setShowVariationModal}>
-        <DialogContent className="bg-ink-card border-ink-border text-white">
+        <DialogContent className="bg-tidal-navy-light border-tidal-blue/20 text-white">
           <DialogHeader>
             <DialogTitle>Request Variation</DialogTitle>
-            <DialogDescription className="text-ink-muted">
+            <DialogDescription className="text-tidal-muted">
               Tell us what changes you'd like to see in the next iteration
             </DialogDescription>
           </DialogHeader>
@@ -308,19 +308,19 @@ export default function DesignReview() {
               placeholder="Example: Make the wings larger, change the color scheme to blue and gold, add more detail to the feathers..."
               value={variationNotes}
               onChange={(e) => setVariationNotes(e.target.value)}
-              className="min-h-[100px] bg-ink-dark border-ink-border text-white placeholder:text-ink-muted"
+              className="min-h-[100px] bg-tidal-navy border-tidal-blue/20 text-white placeholder:text-tidal-muted"
             />
             <div className="flex gap-3">
               <Button
                 variant="outline"
                 onClick={() => setShowVariationModal(false)}
-                className="flex-1 border-ink-border text-white"
+                className="flex-1 border-tidal-blue/20 text-white"
               >
                 Cancel
               </Button>
               <Button
                 onClick={submitVariationRequest}
-                className="flex-1 bg-ink-red hover:bg-ink-red/90 text-white"
+                className="flex-1 bg-tidal-orange hover:bg-tidal-orange/90 text-white"
               >
                 Generate Variations
               </Button>
@@ -334,7 +334,7 @@ export default function DesignReview() {
 
 function Badge({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center px-3 py-1 rounded-full bg-ink-border text-ink-muted text-sm">
+    <span className="inline-flex items-center px-3 py-1 rounded-full bg-tidal-blue/20 text-tidal-muted text-sm">
       {children}
     </span>
   );

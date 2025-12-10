@@ -27,16 +27,16 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-ink-dark flex items-center justify-center p-4">
-      <Card className="w-full max-w-md bg-ink-card border-ink-border">
+    <div className="min-h-screen bg-tidal-navy flex items-center justify-center p-4">
+      <Card className="w-full max-w-md bg-tidal-navy-light border-tidal-blue/20">
         <CardHeader className="space-y-1">
           <div className="text-center mb-4">
             <Link to="/" className="text-3xl font-display font-bold">
-              InkVision <span className="text-ink-red">Studio</span>
+              Tidal Ink <span className="text-tidal-orange">Tattoo</span>
             </Link>
           </div>
           <CardTitle className="text-2xl text-white">Welcome back</CardTitle>
-          <CardDescription className="text-ink-muted">
+          <CardDescription className="text-tidal-muted">
             Enter your credentials to access your account
           </CardDescription>
         </CardHeader>
@@ -51,7 +51,7 @@ export default function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="bg-ink-dark border-ink-border text-white placeholder:text-ink-muted"
+                className="bg-tidal-navy border-tidal-blue/20 text-white placeholder:text-tidal-muted"
               />
             </div>
             <div className="space-y-2">
@@ -62,21 +62,21 @@ export default function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="bg-ink-dark border-ink-border text-white"
+                className="bg-tidal-navy border-tidal-blue/20 text-white"
               />
             </div>
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-ink-red hover:bg-ink-red/90 text-white"
+              className="w-full bg-tidal-orange hover:bg-tidal-orange/90 text-white"
             >
               {isLoading ? 'Signing in...' : 'Sign In'}
             </Button>
           </form>
 
           <div className="mt-6 text-center text-sm">
-            <span className="text-ink-muted">Don't have an account? </span>
-            <Link to="/register" className="text-ink-red hover:underline">
+            <span className="text-tidal-muted">Don't have an account? </span>
+            <Link to="/register" className="text-tidal-orange hover:underline">
               Sign up
             </Link>
           </div>

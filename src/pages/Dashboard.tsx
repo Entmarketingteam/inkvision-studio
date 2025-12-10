@@ -49,23 +49,23 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-ink-dark">
-      <nav className="bg-ink-card border-b border-ink-border">
+    <div className="min-h-screen bg-tidal-navy">
+      <nav className="bg-tidal-navy-light border-b border-tidal-blue/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/dashboard" className="text-2xl font-display font-bold">
-              InkVision <span className="text-ink-red">Studio</span>
+              Tidal Ink <span className="text-tidal-orange">Tattoo</span>
             </Link>
             <div className="flex items-center gap-4">
               <Link to="/profile">
-                <Button variant="ghost" className="text-white hover:text-ink-red">
+                <Button variant="ghost" className="text-white hover:text-tidal-orange">
                   Profile
                 </Button>
               </Link>
               <Button
                 variant="ghost"
                 onClick={handleSignOut}
-                className="text-white hover:text-ink-red"
+                className="text-white hover:text-tidal-orange"
               >
                 <LogOut className="h-4 w-4 mr-2" />
                 Sign Out
@@ -80,34 +80,34 @@ export default function Dashboard() {
           <h1 className="text-3xl font-display font-bold text-white mb-2">
             Welcome back, {profile?.full_name || 'there'}
           </h1>
-          <p className="text-ink-muted">Manage your tattoo designs and track progress</p>
+          <p className="text-tidal-muted">Manage your tattoo designs and track progress</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <Card className="bg-ink-card border-ink-border">
+          <Card className="bg-tidal-navy-light border-tidal-blue/20">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-ink-muted">Total Requests</CardTitle>
-              <FileText className="h-4 w-4 text-ink-muted" />
+              <CardTitle className="text-sm font-medium text-tidal-muted">Total Requests</CardTitle>
+              <FileText className="h-4 w-4 text-tidal-muted" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold text-white">{stats.total}</div>
             </CardContent>
           </Card>
 
-          <Card className="bg-ink-card border-ink-border">
+          <Card className="bg-tidal-navy-light border-tidal-blue/20">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-ink-muted">In Progress</CardTitle>
-              <Clock className="h-4 w-4 text-ink-muted" />
+              <CardTitle className="text-sm font-medium text-tidal-muted">In Progress</CardTitle>
+              <Clock className="h-4 w-4 text-tidal-muted" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold text-yellow-400">{stats.inProgress}</div>
             </CardContent>
           </Card>
 
-          <Card className="bg-ink-card border-ink-border">
+          <Card className="bg-tidal-navy-light border-tidal-blue/20">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-ink-muted">Approved</CardTitle>
-              <CheckCircle className="h-4 w-4 text-ink-muted" />
+              <CardTitle className="text-sm font-medium text-tidal-muted">Approved</CardTitle>
+              <CheckCircle className="h-4 w-4 text-tidal-muted" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold text-green-400">{stats.approved}</div>
@@ -118,7 +118,7 @@ export default function Dashboard() {
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-display font-bold text-white">Your Design Requests</h2>
           <Link to="/request/new">
-            <Button className="bg-ink-red hover:bg-ink-red/90 text-white">
+            <Button className="bg-tidal-orange hover:bg-tidal-orange/90 text-white">
               <Plus className="h-4 w-4 mr-2" />
               New Design Request
             </Button>
@@ -127,14 +127,14 @@ export default function Dashboard() {
 
         {loading ? (
           <div className="flex justify-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-ink-red"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-tidal-orange"></div>
           </div>
         ) : requests.length === 0 ? (
-          <Card className="bg-ink-card border-ink-border">
+          <Card className="bg-tidal-navy-light border-tidal-blue/20">
             <CardContent className="py-12 text-center">
-              <p className="text-ink-muted mb-4">No design requests yet</p>
+              <p className="text-tidal-muted mb-4">No design requests yet</p>
               <Link to="/request/new">
-                <Button className="bg-ink-red hover:bg-ink-red/90 text-white">
+                <Button className="bg-tidal-orange hover:bg-tidal-orange/90 text-white">
                   Create Your First Design
                 </Button>
               </Link>
@@ -144,11 +144,11 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {requests.map((request) => (
               <Link key={request.id} to={`/request/${request.id}`}>
-                <Card className="bg-ink-card border-ink-border hover:border-ink-red/50 transition-all duration-300 hover:shadow-glow cursor-pointer">
+                <Card className="bg-tidal-navy-light border-tidal-blue/20 hover:border-tidal-orange/50 transition-all duration-300 hover:shadow-glow cursor-pointer">
                   <CardHeader>
                     <div className="flex items-start justify-between mb-2">
                       <StatusBadge status={request.status} />
-                      <span className="text-xs text-ink-muted">
+                      <span className="text-xs text-tidal-muted">
                         {new Date(request.created_at).toLocaleDateString()}
                       </span>
                     </div>
@@ -158,10 +158,10 @@ export default function Dashboard() {
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
-                      <Badge className="bg-ink-border text-ink-muted border-none">
+                      <Badge className="bg-tidal-blue/20 text-tidal-muted border-none">
                         {request.style}
                       </Badge>
-                      <Badge className="bg-ink-border text-ink-muted border-none">
+                      <Badge className="bg-tidal-blue/20 text-tidal-muted border-none">
                         {request.placement}
                       </Badge>
                     </div>

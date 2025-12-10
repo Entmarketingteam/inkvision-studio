@@ -47,12 +47,12 @@ export default function Profile() {
   };
 
   return (
-    <div className="min-h-screen bg-ink-dark">
-      <nav className="bg-ink-card border-b border-ink-border">
+    <div className="min-h-screen bg-tidal-navy">
+      <nav className="bg-tidal-navy-light border-b border-tidal-blue/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/dashboard" className="text-2xl font-display font-bold">
-              InkVision <span className="text-ink-red">Studio</span>
+              Tidal Ink <span className="text-tidal-orange">Tattoo</span>
             </Link>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function Profile() {
 
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Link to="/dashboard">
-          <Button variant="ghost" className="text-ink-muted hover:text-white mb-4">
+          <Button variant="ghost" className="text-tidal-muted hover:text-white mb-4">
             <ChevronLeft className="h-4 w-4 mr-2" />
             Back to Dashboard
           </Button>
@@ -70,10 +70,10 @@ export default function Profile() {
           <h1 className="text-3xl font-display font-bold text-white mb-2">
             Profile Settings
           </h1>
-          <p className="text-ink-muted">Manage your account information</p>
+          <p className="text-tidal-muted">Manage your account information</p>
         </div>
 
-        <Card className="bg-ink-card border-ink-border">
+        <Card className="bg-tidal-navy-light border-tidal-blue/20">
           <CardHeader>
             <CardTitle className="text-white">Personal Information</CardTitle>
           </CardHeader>
@@ -86,9 +86,9 @@ export default function Profile() {
                   type="email"
                   value={profile?.email || ''}
                   disabled
-                  className="bg-ink-dark border-ink-border text-ink-muted"
+                  className="bg-tidal-navy border-tidal-blue/20 text-tidal-muted"
                 />
-                <p className="text-xs text-ink-muted">Email cannot be changed</p>
+                <p className="text-xs text-tidal-muted">Email cannot be changed</p>
               </div>
 
               <div className="space-y-2">
@@ -98,7 +98,7 @@ export default function Profile() {
                   type="text"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="bg-ink-dark border-ink-border text-white"
+                  className="bg-tidal-navy border-tidal-blue/20 text-white"
                 />
               </div>
 
@@ -110,14 +110,14 @@ export default function Profile() {
                   placeholder="(555) 123-4567"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="bg-ink-dark border-ink-border text-white placeholder:text-ink-muted"
+                  className="bg-tidal-navy border-tidal-blue/20 text-white placeholder:text-tidal-muted"
                 />
               </div>
 
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-ink-red hover:bg-ink-red/90 text-white"
+                className="w-full bg-tidal-orange hover:bg-tidal-orange/90 text-white"
               >
                 {isLoading ? 'Saving...' : 'Save Changes'}
               </Button>
@@ -125,7 +125,7 @@ export default function Profile() {
           </CardContent>
         </Card>
 
-        <Card className="bg-ink-card border-ink-border mt-6">
+        <Card className="bg-tidal-navy-light border-tidal-blue/20 mt-6">
           <CardHeader>
             <CardTitle className="text-white">Account Role</CardTitle>
           </CardHeader>
@@ -133,8 +133,8 @@ export default function Profile() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-white mb-1">Current Role</p>
-                <p className="text-ink-muted text-sm">
-                  You are signed in as a <span className="text-ink-red">{profile?.role}</span>
+                <p className="text-tidal-muted text-sm">
+                  You are signed in as a <span className="text-tidal-orange">{profile?.role}</span>
                 </p>
               </div>
             </div>
