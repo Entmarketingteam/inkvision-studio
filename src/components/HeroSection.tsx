@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import tidalInkLogo from "@/assets/tidal-ink-logo.png";
 
 interface HeroSectionProps {
   onStartGuide: () => void;
@@ -9,22 +9,22 @@ interface HeroSectionProps {
 export function HeroSection({ onStartGuide }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
-      
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 gradient-hero" />
+      {/* Animated Background Gradient */}
+      <div className="absolute inset-0 gradient-wave" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background" />
       
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto animate-fade-in">
-        <p className="text-primary font-display tracking-[0.3em] uppercase text-sm mb-4">
-          Art on Main • Mt. Washington
-        </p>
+        {/* Logo */}
+        <div className="mb-8 flex justify-center">
+          <img 
+            src={tidalInkLogo} 
+            alt="Tidal Ink Tattoo" 
+            className="h-48 md:h-64 lg:h-80 w-auto drop-shadow-2xl"
+          />
+        </div>
         
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-display text-foreground mb-6 leading-tight">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-display text-foreground mb-6 leading-tight">
           Your Tattoo<br />
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Vision Guide</span>
         </h1>

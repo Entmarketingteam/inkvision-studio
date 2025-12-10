@@ -6,60 +6,66 @@
 
 @layer base {
   :root {
-    --background: 0 0% 7%;
-    --foreground: 40 15% 92%;
+    /* Tidal Ink Tattoo - Ocean-inspired palette */
+    --background: 210 35% 10%;
+    --foreground: 40 25% 92%;
 
-    --card: 0 0% 10%;
-    --card-foreground: 40 15% 92%;
+    --card: 210 30% 14%;
+    --card-foreground: 40 25% 92%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 40 15% 92%;
+    --popover: 210 30% 14%;
+    --popover-foreground: 40 25% 92%;
 
-    --primary: 40 25% 65%;
-    --primary-foreground: 0 0% 7%;
+    --primary: 195 65% 45%;
+    --primary-foreground: 210 35% 10%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 40 15% 92%;
+    --secondary: 210 25% 18%;
+    --secondary-foreground: 40 25% 92%;
 
-    --muted: 0 0% 18%;
-    --muted-foreground: 40 8% 60%;
+    --muted: 210 20% 22%;
+    --muted-foreground: 200 15% 55%;
 
-    --accent: 25 60% 50%;
-    --accent-foreground: 0 0% 7%;
+    --accent: 18 85% 55%;
+    --accent-foreground: 210 35% 10%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 40 15% 92%;
+    --destructive-foreground: 40 25% 92%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 18%;
-    --ring: 40 25% 65%;
+    --border: 210 20% 22%;
+    --input: 210 25% 18%;
+    --ring: 195 65% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 8%;
-    --sidebar-foreground: 40 15% 92%;
-    --sidebar-primary: 40 25% 65%;
-    --sidebar-primary-foreground: 0 0% 7%;
-    --sidebar-accent: 0 0% 15%;
-    --sidebar-accent-foreground: 40 15% 92%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 40 25% 65%;
+    --sidebar-background: 210 35% 8%;
+    --sidebar-foreground: 40 25% 92%;
+    --sidebar-primary: 195 65% 45%;
+    --sidebar-primary-foreground: 210 35% 10%;
+    --sidebar-accent: 210 25% 18%;
+    --sidebar-accent-foreground: 40 25% 92%;
+    --sidebar-border: 210 20% 22%;
+    --sidebar-ring: 195 65% 45%;
 
-    --chart-1: 40 25% 65%;
-    --chart-2: 25 60% 50%;
-    --chart-3: 0 0% 60%;
-    --chart-4: 210 10% 40%;
-    --chart-5: 30 20% 45%;
+    --chart-1: 195 65% 45%;
+    --chart-2: 18 85% 55%;
+    --chart-3: 40 25% 80%;
+    --chart-4: 200 50% 35%;
+    --chart-5: 210 30% 30%;
 
     --font-display: 'Cinzel', serif;
     --font-body: 'Inter', sans-serif;
 
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 0% / 0.7) 0%, hsl(0 0% 0% / 0.4) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 12%) 0%, hsl(0 0% 8%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(40 25% 65%) 0%, hsl(25 60% 50%) 100%);
+    /* Tidal gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(210 35% 5% / 0.85) 0%, hsl(210 35% 10% / 0.6) 50%, hsl(200 40% 15% / 0.4) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(210 30% 16%) 0%, hsl(210 30% 12%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(195 65% 45%) 0%, hsl(18 85% 55%) 100%);
+    --gradient-ocean: linear-gradient(135deg, hsl(200 70% 35%) 0%, hsl(195 65% 45%) 50%, hsl(190 60% 55%) 100%);
+    --gradient-wave: linear-gradient(180deg, hsl(210 35% 10%) 0%, hsl(200 40% 20%) 100%);
+    --gradient-bento: linear-gradient(145deg, hsl(210 30% 16%) 0%, hsl(200 35% 18%) 100%);
 
-    --shadow-glow: 0 0 30px hsl(40 25% 65% / 0.15);
-    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 40px hsl(195 65% 45% / 0.2);
+    --shadow-card: 0 8px 32px hsl(210 35% 5% / 0.6);
+    --shadow-bento: 0 4px 24px hsl(210 35% 5% / 0.4);
   }
 }
 
@@ -104,6 +110,18 @@
     background: var(--gradient-accent);
   }
 
+  .gradient-ocean {
+    background: var(--gradient-ocean);
+  }
+
+  .gradient-wave {
+    background: var(--gradient-wave);
+  }
+
+  .gradient-bento {
+    background: var(--gradient-bento);
+  }
+
   .shadow-glow {
     box-shadow: var(--shadow-glow);
   }
@@ -112,12 +130,20 @@
     box-shadow: var(--shadow-card);
   }
 
+  .shadow-bento {
+    box-shadow: var(--shadow-bento);
+  }
+
   .animate-fade-in {
     animation: fadeIn 0.5s ease-out forwards;
   }
 
   .animate-slide-up {
     animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-wave {
+    animation: wave 3s ease-in-out infinite;
   }
 
   @keyframes fadeIn {
@@ -134,5 +160,29 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  @keyframes wave {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+  /* Bento Grid Utilities */
+  .bento-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .bento-card {
+    @apply rounded-xl border border-border/50 backdrop-blur-sm transition-all duration-300;
+    background: var(--gradient-bento);
+    box-shadow: var(--shadow-bento);
+  }
+
+  .bento-card:hover {
+    @apply border-primary/30;
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
   }
 }
